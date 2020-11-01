@@ -1,0 +1,16 @@
+#!/bin/sh
+#SBATCH -N 1 --ntasks-per-node=1
+#SBATCH -p short
+#SBATCH -t 1:00:00
+
+# /* Explanation of commandline arguments */ 
+# /* Number of dye molecules / length of aggregate */
+# /* Magintude of molecular disorder in cm-1 */
+# /* Monomer average absorption energy in cm-1 */
+# /* Nearest Neighbor Coupling in cm-1 */
+# /* Number of disorder realizations */
+# /* Number of bins in histogram */
+
+cd $SLURM_SUBMIT_DIR
+time -p ./aggregate 1000 1000 10000 1000 100 100
+
